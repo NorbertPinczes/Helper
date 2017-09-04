@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+	/*
 	#holder {width: 100%; overflow: hidden;}
 	#sub0, #sub1, #sub2 {float: left;}
 	#sub0 {width: 25%; background-color:blue;}
@@ -15,6 +16,35 @@
 	#sub2 {width: 25%; background-color:blue;}
 	#sub0 img {object-fit: fill;}
 	#sub1 img {height: 100%; width: 100%;}
+	*/
+	
+	#rightholder img {
+	width: 33%;
+    float: left;
+	}
+	
+	.test {
+    width: 30%;
+    float: left;
+		
+	}
+	
+	#leftholder {
+		background-color:yellow;
+	}
+	
+	#sub1 {
+		background-color:yellow;
+	}
+	
+	#middleleft {
+		
+	}
+	
+	#rightleft {
+		
+	}
+	
   </style>
 </head>
 <body>
@@ -24,21 +54,18 @@
   <p></p>
   <div class="row">
     <div class="col-md-6" style="background-color:white;">
-	  <div id="midholder">
-			<img alt="test" src="1_22.png" />
-			<img alt="test" src="1_22.png" />
-			<img alt="test" src="1_22.png" />
+	  <div id="leftholder">
+			<div class="test" id="veryleft"><img id="l0" alt="test" src="Base_OK.png" /></div>
+			<div class="test" id="middleleft"><img id="m0" alt="test" src="Base_OK.png" /></div>
+			<div class="test" id="rightleft"><img id="r0" alt="test" src="Base_OK.png" /></div>
 		</div>
 
     </div>
     <div class="col-md-6" style="background-color:white;">
-		<!--<img alt="test" src="1_22.png" />
-		<img alt="test" src="1_22.png" />
-		<img alt="test" src="1_22.png" />-->
-		<div id="holder">
-			<div id="sub0"><img alt="test" src="1_22.png" /></div>
-			<div id="sub1"><img alt="test" src="1_22.png" /></div>
-			<div id="sub2"><img alt="test" src="1_22.png" /></div>
+		<div id="rightholder">
+			<div id="sub0"><img alt="test" src="Base_OK.png" /></div>
+			<div id="sub1"><img alt="test" src="Base_OK.png" /></div>
+			<div id="sub2"><img alt="test" src="Base_OK.png" /></div>
 		</div>
     </div>
   </div>
