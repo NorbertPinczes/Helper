@@ -7,6 +7,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+		function myFunction() {
+			alert(document.getElementById("heading").style.backgroundImage);
+		}
+  </script>
+  <script>
+	//var i = 1;
+	function changeBgr() {
+		var image = document.getElementById("heading").style.backgroundImage;
+		alert(image);
+		//if image url BG_[number] == the max number of images then start from 1
+		image.style.backgroundImage = "url('BG_2.png')";
+		//i++;
+	}
+  </script>
   <style>
   /**https://stackoverflow.com/questions/41052846/how-can-i-add-background-color-behind-a-transparent-background-image**/	
   
@@ -22,7 +37,7 @@
 	}
 	
 	#rheading {
-		background-image: url(BG_beach.png);
+		background-image: url(BG_1.png);
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 		height: 620px;
@@ -57,7 +72,7 @@
 <div class="row">
 <div class="col-md-1" style="height: 620px; border: 2px solid green;">
 <div>
-	<button>Change background</button>
+	<button type="button" onclick="changeBgr()">Change background</button>
 </div>
 </div>
 <div class="col-md-2" style="height: 620px; border: 2px solid green;">
