@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>For Yvette</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+		function myFunction() {
+			alert(document.getElementById("heading").style.backgroundImage);
+		}
+  </script>
+  <script>
+	function changeBgr() {
+		var backgroundImg = [];
+		backgroundImg[0] = 'Background/BG_1.png';
+		backgroundImg[1] = 'Background/BG_2.png';
+		backgroundImg[2] = 'Background/BG_3.png';
+		backgroundImg[3] = 'Background/BG_4.png';
+		backgroundImg[4] = 'Background/BG_5.png';
+		//alert(document.getElementById("rheading").style.backgroundImage);
+		//var image = document.getElementById("rheading").style.backgroundImage;
+		i++;
+		if(i==8) {
+			i = 1;
+		}
+		document.getElementById("rheading").style.backgroundImage = "url(" + i + ")";
+		//document.getElementById("rheading").style.backgroundImage = "url('BG_" + i + ".png')";
+		//image.style.backgroundImage = "url('BG_8.png')";
+		//if image url BG_[number] == the max number of images then start from 1
+		//i++;
+	}
+	  
+	  //function to use xml with questions and answers
+  </script>
+  <style>
+  /**https://stackoverflow.com/questions/41052846/how-can-i-add-background-color-behind-a-transparent-background-image**/	
+  
+	#heading {
+	  background-image: url(BG_beach.png);
+	  background-size: cover;
+	  height: 620px;
+	}
+	
+	#heading img {
+  		width: 33%;
+		float: left;
+	}
+	
+	#rheading {
+		background-image: url(BG_1.png);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		height: 620px;
+	}
+	
+	#rheading img {
+		width: 33%;
+		float: left;
+	}
+	
+	#mainSelector {
+		height: 50px;
+		border: 2px solid blue;
+	}
+	
+	#mainSelector .actorSelector {
+		width: 33%;
+		float: left;
+		
+	}
+	
+	.actorSelector {
+		height: 50px;
+		border: 2px solid red;
+	}
+	
+  </style>
+</head>
+<body>
+<h3>Menu</h3>
+
+<div class="row">
+<div class="col-md-1" style="height: 620px; border: 2px solid green;">
+<div>
+	<button type="button" onclick="changeBgr()">Change background</button>
+</div>
+</div>
+<div class="col-md-2" style="height: 620px; border: 2px solid green;">
+	<div id="mainSelector">
+		<div class="actorSelector"></div>
+		<div class="actorSelector"></div>
+		<div class="actorSelector"></div>
+		<div></div>
+	</div>
+</div>
+
+<div class="col-md-7" style="height: 620px; border: 2px solid green;">
+	<div id="rightholder">
+		<div id ="rheading">
+			<div id="sub0"><img alt="test" src="1_22.png" /></div>
+			<div id="sub1" ><img alt="test" src="2_22.png" /></div>
+			<div id="sub2"><img alt="test" src="3_22.png" /></div>
+		</div>
+	</div>
+</div>
+<div class="col-md-2" style="height: 620px; border: 2px solid green;">
+</div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
