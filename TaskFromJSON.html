@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Random task generator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+$.getJSON("Tasks.js", function(json) {
+	
+	$('#selected').html('<p> Task: ' + json.tasks[0].topic + '</p>');
+    $('#selected').append('<p> Question: ' + json.tasks[0].title + '</p>');
+	$('#selected').append('<div id="showAnswer"> Answer: ' + json.tasks[0].answer + '</div>');
+});
+</script>
+</head>
+<body>
+<div id="selected">
+</div>
+<input id= "showAnswer" type/>
+</body>
+</html>
