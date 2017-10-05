@@ -1,22 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!--
+https://stackoverflow.com/questions/21012580/is-it-possible-to-write-data-to-file-using-only-javascript
+https://www.w3schools.com/html/html5_webstorage.asp
+https://stackoverflow.com/questions/191881/serializing-to-json-in-jquery
+https://stackoverflow.com/questions/20823535/how-to-write-data-into-a-json-file-using-jquery
+
+https://stackoverflow.com/questions/13062246/when-should-i-use-jquerys-document-ready-function
+https://www.codecademy.com/en/forum_questions/53e56d0a9c4e9d53dc0004dd
+
+GOOGLE: jquery button click example
+
+-->
+
 <meta charset=utf-8>
 <title>Random task generator</title>
+<style>
+#hiddenAnswer {
+	visibility:hidden;
+}
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
 
-$.getJSON("Tasks.js", function(json) {
+function InfoWr() {
+	var obj = {
+		name: 'C#', /*the values can be passed from the ui*/
+		score: 200
+	};
+
+	localStorage.setItem('userStorage', JSON.stringify(obj));
+}
+
+function InfoRd() {
+
+	document.getElementById("result").innerHTML = "The score is: "
 	
-	$('#selected').html('<p> Task: ' + json.tasks[0].topic + '</p>');
-    $('#selected').append('<p> Question: ' + json.tasks[0].title + '</p>');
-	$('#selected').append('<div id="showAnswer"> Answer: ' + json.tasks[0].answer + '</div>');
+	var obj = JSON.parse(localStorage.getItem('userStorage'));
+	
+	document.getElementById("result").innerHTML = "The score is: " + obj.score;
+}
+
+function InfoClr() {
+	localStorage.removeItem('userStorage');
+}
+
+$(document).ready(function() {
+	$.getJSON("Topics/CSharp.json", function(json) {
+	
+		$('#selected').html('<p> Task: ' + json.tasks[0].topic + '</p>');
+		$('#selected').append('<p> Question: ' + json.tasks[0].title + '</p>');
+		$('#selected').append('<div id="showAnswer"> Answer: ' + json.tasks[0].answer + '</div>');
+		$('#hiddenAnswer').text('white');
+	});
+
+	$("#show").click(function(){
+        $('#hiddenAnswer').css('visibility', 'visible');
+    });
 });
+
+
 </script>
 </head>
 <body>
 <div id="selected">
 </div>
+<div id="hiddenAnswer">black</div>
+<button id="show">ShowAnswer</button>
 <input id= "showAnswer" type/>
+<p><button onclick="InfoWr()" type="button">settingData</button><p>
+<p><button onclick="InfoRd()" type="button">gettingData</button><p>
+<p><button onclick="InfoClr()" type="button">clearData</button><p>
+<div id="result"></div>
 </body>
 </html>
