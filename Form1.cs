@@ -29,6 +29,7 @@ namespace JsonSerializerApp
             DialogResult dResult = openJsonFileDialog.ShowDialog();
             if (dResult == DialogResult.OK)
                 filePath = openJsonFileDialog.FileName;
+            //empty path can be an issue
 
             try
             {
